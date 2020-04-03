@@ -46,7 +46,13 @@ entropy_file = f'entropies_{args.database}.npz'
 entropies = np.load(entropy_file)
 I2_entropies, I3_entropies, I4_entropies, V4_entropies = entropies['I2'], entropies['I3'], entropies['I4'], entropies['V4']
 
-nonzero_I2, nonzero_I3, nonzero_I4, nonzero_V4 = np.nonzero(I2_entropies), np.nonzero(I3_entropies), np.nonzero(I4_entropies), np.nonzero(V4_entropies)
+nonzero_I2, nonzero_I3, nonzero_I4, nonzero_V4 = np.nonzero(I2_entropies)[0], np.nonzero(I3_entropies)[0], np.nonzero(I4_entropies)[0], np.nonzero(V4_entropies)[0]
+
+print(f'{args.database}, '
+      f'I2 {I2_AFS.shape[0]} configs {nonzero_I2.shape[0]} entropies, '
+      f'I3 {I3_AFS.shape[0]} configs {nonzero_I3.shape[0]} entropies, '
+      f'I4 {I4_AFS.shape[0]} configs {nonzero_I4.shape[0]} entropies, '
+      f'V4 {V4_AFS.shape[0]} configs {nonzero_V4.shape[0]} entropies')
 
 X = np.concatenate([I2_AFS[nonzero_I2], I3_AFS[nonzero_I3], I4_AFS[nonzero_I4], V4_AFS[nonzero_V4]], axis=0)
 y = np.concatenate([I2_entropies[nonzero_I2], I3_entropies[nonzero_I3], I4_entropies[nonzero_I4], V4_entropies[nonzero_V4]], axis=0)
