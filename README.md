@@ -1,7 +1,8 @@
 # Angular Fourier Series descriptors
 
+To reproduce the results of [Machine learning surrogate models for prediction of point defect vibrational entropy](https://journals.aps.org/prmaterials/abstract/10.1103/PhysRevMaterials.4.063802).
 Python implementation of the chemical environment descriptor Angular Fourier Series defined in the paper
-'On representing chemical environments' (Bartok, Kondor, Csanyi) , DOI: https://doi.org/10.1103/PhysRevB.87.184115
+ [On representing chemical environments](https://doi.org/10.1103/PhysRevB.87.184115) by Bartok, Kondor, Csanyi.
 
 ## Dependencies
 * python3 >= 3.6  (for f strings)
@@ -28,5 +29,17 @@ and for MEAM database, run
 python main.py --database MEAM --l_max 10 --n_max 20 --r_cut 5.
 ```
 
-If you use this work, please cite  ...
+If you use this work, please cite :
+```
+@article{lapointe2020machine,
+  title={Machine learning surrogate models for prediction of point defect vibrational entropy},
+  author={Lapointe, Clovis and Swinburne, Thomas D and Thiry, Louis and Mallat, St{\'e}phane and Proville, Laurent and Becquart, Charlotte S and Marinica, Mihai-Cosmin},
+  journal={Physical Review Materials},
+  volume={4},
+  number={6},
+  pages={063802},
+  year={2020},
+  publisher={APS}
+}
+```
 
